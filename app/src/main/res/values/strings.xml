@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Fun Quizes</string>
+    <string name="start">Начать</string>
+    <string name="back">Назад</string>
+    <string name="level">Уровень:</string>
+    <string name="level1">Уровень 1</string>
+    <string name="textcontinue">ОК</string>
+    <string name="leveltwo">Уровень 2</string>
+</resources>
