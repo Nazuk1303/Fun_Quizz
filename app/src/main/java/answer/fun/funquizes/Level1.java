@@ -159,7 +159,7 @@ public class Level1 extends AppCompatActivity {
 
         numRight = random.nextInt(10);
 
-        while (numLeft==numRight){
+        while (array.even[numLeft]==array.even[numRight]){
             numRight = random.nextInt(10);
         }
 
@@ -172,14 +172,14 @@ public class Level1 extends AppCompatActivity {
 
                 if (event.getAction()==MotionEvent.ACTION_DOWN){
                   img_right.setEnabled(false);
-                  if(numLeft<numRight){
+                  if(array.even[numLeft]>array.even[numRight]){
                       img_left.setImageResource(R.drawable.img_true);
                   }else{
                       img_left.setImageResource(R.drawable.img_false);
                   }
                   //если коснулся картинки - конец
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
-                   if(numLeft<numRight){
+                   if(array.even[numLeft]>array.even[numRight]){
                        if (count<15){
                        count = count+1;
                        }
@@ -224,7 +224,7 @@ public class Level1 extends AppCompatActivity {
 
                         numRight = random.nextInt(10);
 
-                        while (numLeft==numRight){
+                        while (array.even[numLeft]==array.even[numRight]){
                             numRight = random.nextInt(10);
                         }
 
@@ -245,14 +245,14 @@ public class Level1 extends AppCompatActivity {
 
                 if (event.getAction()==MotionEvent.ACTION_DOWN){
                     img_left.setEnabled(false);
-                    if(numRight<numLeft){
+                    if(array.even[numLeft]<array.even[numRight]){
                         img_right.setImageResource(R.drawable.img_true);
                     }else{
                         img_right.setImageResource(R.drawable.img_false);
                     }
                     //если коснулся картинки - конец
                 }else if (event.getAction()==MotionEvent.ACTION_UP){
-                    if(numRight<numLeft){
+                    if(array.even[numLeft]<array.even[numRight]){
                         if (count<15){
                             count = count+1;
                         }
@@ -297,7 +297,7 @@ public class Level1 extends AppCompatActivity {
 
                         numRight = random.nextInt(10);
 
-                        while (numLeft==numRight){
+                        while (array.even[numLeft]==array.even[numRight]){
                             numRight = random.nextInt(10);
                         }
 

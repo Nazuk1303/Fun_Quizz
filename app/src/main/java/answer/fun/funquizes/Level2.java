@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,11 +54,20 @@ public class Level2 extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //развернуть игру на весь экран - конец
 
+        ImageView background = (ImageView)findViewById(R.id.background);
+        background.setImageResource(R.drawable.level2);
+
         dialog = new Dialog(this);//создаём новое диалоговое окно
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
         dialog.setContentView(R.layout.previewdialog);//путь
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//прозрачный фон
         dialog.setCancelable(false);//нельзе закрыть кнопкой "Назад"
+
+        ImageView imgpreview = (ImageView)dialog.findViewById(R.id.previewimg);
+        imgpreview.setImageResource(R.drawable.previewimg2);
+
+        LinearLayout dialogfon = (LinearLayout)dialog.findViewById(R.id.dialogfon);
+        dialogfon.setBackgroundResource(R.drawable.previewbackground2);
 
         TextView textdescription = (TextView)dialog.findViewById(R.id.textdescription);
         textdescription.setText(R.string.level2);
@@ -116,7 +126,7 @@ public class Level2 extends AppCompatActivity {
         btncontinue2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Level2.this, Level2.class);
+                Intent intent = new Intent(Level2.this, Level3 .class);
                 startActivity(intent);
                 finish();
                 dialogEnd.dismiss();

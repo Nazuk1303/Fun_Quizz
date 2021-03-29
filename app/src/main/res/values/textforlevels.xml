@@ -11,14 +11,131 @@
     <string name="lvl1text8">Восемь</string>
     <string name="lvl1text9">Девять</string>
 
-    <string name="lvl2text0">Ноль</string>
-    <string name="lvl2text1">Один</string>
-    <string name="lvl2text2">Два</string>
-    <string name="lvl2text3">Три</string>
-    <string name="lvl2text4">Четыре</string>
-    <string name="lvl2text5">Пять</string>
-    <string name="lvl2text6">Шесть</string>
-    <string name="lvl2text7">Семь</string>
-    <string name="lvl2text8">Восемь</string>
-    <string name="lvl2text9">Девять</string>
+    <string name="lvl2text0">Хомяк</string>
+    <string name="lvl2text1">Заяц</string>
+    <string name="lvl2text2">Кенгуру</string>
+    <string name="lvl2text3">Тюлень</string>
+    <string name="lvl2text4">Волк</string>
+    <string name="lvl2text5">Медведь</string>
+    <string name="lvl2text6">Лев</string>
+    <string name="lvl2text7">Бегемот</string>
+    <string name="lvl2text8">Верблюд</string>
+    <string name="lvl2text9">Жираф</string>
+    <string name="lvl2text10">Слон</string>
+    <string name="lvl2text11">Кит</string>
+
+
+    <string name="lvl3text0">Плутон</string>
+    <string name="lvl3text1">Меркурий</string>
+    <string name="lvl3text2">Марс</string>
+    <string name="lvl3text3">Венера</string>
+    <string name="lvl3text4">Земля</string>
+    <string name="lvl3text5">Нептун</string>
+    <string name="lvl3text6">Уран</string>
+    <string name="lvl3text7">Сатурн</string>
+    <string name="lvl3text8">Юпитер</string>
+
+    <string name="ten">Десять</string>
+    <string name="eleven">Одиннадцать</string>
+    <string name="twelve">Двенадцать</string>
+    <string name="therteen">Тринадцать</string>
+    <string name="fourteen">Четырнадцать</string>
+    <string name="fifteen">Пятнадцать</string>
+    <string name="sixteen">Шестнадцать</string>
+    <string name="seventeen">Семнадцать</string>
+    <string name="eighteen">Восемнадцать</string>
+    <string name="nineteen">Девятнадцать</string>
+    <string name="twenty">Двадцать</string>
+    <string name="twentyone">Двадцать один</string>
+    <string name="twentytwo">Двадцать два</string>
+    <string name="twentythree">Двадцать три</string>
+    <string name="twentyfour">Двадцать четыре</string>
+    <string name="twentyfive">Двадцать пять</string>
+    <string name="twentysix">Двадцать шесть</string>
+    <string name="twentyseven">Двадцать семь</string>
+    <string name="twentyeight">Двадцать восемь</string>
+    <string name="twentynine">Двадцать девять</string>
+    <string name="thirty">Тридцать</string>
+    <string name="thirtyone">Тридцать один</string>
+    <string name="thirtytwo">Тридцать два</string>
+    <string name="thirtythree">Тридцать три</string>
+    <string name="thirtyfour">Тридцать четыре</string>
+    <string name="thirtyfive">Тридцать пять</string>
+    <string name="thirtysix">Тридцать шесть</string>
+    <string name="thirtyseven">Тридцать семь</string>
+    <string name="thirtyeight">Тридцать восемь</string>
+    <string name="thirtynine">Тридцать девять</string>
+    <string name="fourty">Сорок</string>
+    <string name="fourtyone">Сорок один</string>
+    <string name="fourtytwo">Сорок два</string>
+    <string name="fourtythree">Сорок три</string>
+    <string name="fourtyfour">Сорок четыре</string>
+    <string name="fourtyfive">Сорок пять</string>
+    <string name="fourtysix">Сорок шесть</string>
+    <string name="fourtyseven">Сорок семь</string>
+    <string name="fourtyeight">Сорок восемь</string>
+    <string name="fourtynine">Сорок девять</string>
+    <string name="fifty">Пятьдесят</string>
+    <string name="fiftyone">Пятьдесят один</string>
+    <string name="fiftytwo">Пятьдесят два</string>
+    <string name="fiftythree">Пятьдесят три</string>
+    <string name="fiftyfour">Пятьдесят четыре</string>
+    <string name="fiftyfive">Пятьдесят пять</string>
+    <string name="fiftysix">Пятьдесят шесть</string>
+    <string name="fiftyseven">Пятьдесят семь</string>
+    <string name="fiftyeight">Пятьдесят восемь</string>
+    <string name="fiftynine">Пятьдесят девять</string>
+    <string name="sixty">Шестьдесят</string>
+    <string name="sixtyone">Шестьдесят один</string>
+    <string name="sixtytwo">Шестьдесят два</string>
+    <string name="sixtythree">Шестьдесят три</string>
+    <string name="sixtyfour">Шестьдесят четыре</string>
+    <string name="sixtyfive">Шестдесят пять</string>
+    <string name="sixtysix">Шестьдесят шесть</string>
+    <string name="sixtyseven">Шестьдесят семь</string>
+    <string name="sixtyeight">Шестьдесят восемь</string>
+    <string name="sixtynine">Шестдесят девять</string>
+    <string name="seventy">Семдесят</string>
+    <string name="seventyone">Семдесят один</string>
+    <string name="seventytwo">Семдесят два</string>
+    <string name="seventythree">Семдесят три</string>
+    <string name="seventyfour">Семдесят четыре</string>
+    <string name="seventyfive">Семдесят пять</string>
+    <string name="seventysix">Семдесят шесть</string>
+    <string name="seventyseven">Семдесят семь</string>
+    <string name="seventyeight">Семдесят восемь</string>
+    <string name="seventynine">Семдесят девять</string>
+    <string name="eighty">Восемдесят</string>
+    <string name="eightyone">Восемдесят один</string>
+    <string name="eightytwo">Восемдесят два</string>
+    <string name="eightythree">Восемдесят три</string>
+    <string name="eightyfour">Восемдесят четыре</string>
+    <string name="eightyfive">Восемдесят пять</string>
+    <string name="eightysix">Восемдесят шесть</string>
+    <string name="eightyseven">Восемдесят семь</string>
+    <string name="eightyeight">Восемдесят восемь</string>
+    <string name="eightynine">Восемдесят девять</string>
+    <string name="ninty">Девяносто</string>
+    <string name="nintyone">Девяносто один</string>
+    <string name="nintytwo">Девяносто два</string>
+    <string name="nintythree">Девяносто три</string>
+    <string name="nintyfour">Девяносто четыре</string>
+    <string name="nintyfive">Девяносто пять</string>
+    <string name="nintysix">Девяносто шесть</string>
+    <string name="nintyseven">Девяносто семь</string>
+    <string name="nintyeight">Девяносто восемь</string>
+    <string name="nintynine">Девяносто девять</string>
+    <string name="onehun">Сто</string>
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>

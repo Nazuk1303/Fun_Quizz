@@ -21,11 +21,11 @@ public class GameLevels extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //развернуть на весь экран - конец
 
-        Button button_back = (Button) findViewById(R.id.button_back);
+        Button button_back = (Button) findViewById(R.id.button_back4);
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent intent = new Intent(GameLevels.this, MainActivity.class);
+                    Intent intent = new Intent(GameLevels.this, Menu_btn.class);
                     startActivity(intent);
                     finish();
             }
@@ -50,10 +50,20 @@ public class GameLevels extends AppCompatActivity {
                 finish();
             }
         });//кнопка для перехода на 2 уровень - конец
+
+        TextView textView3 = (TextView)findViewById(R.id.textView3);
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GameLevels.this, Level3.class);
+                startActivity(intent);
+                finish();
+            }
+        });//кнопка для перехода на 3 уровень - конец
     }
 @Override
     public void onBackPressed(){
-    Intent intent = new Intent(GameLevels.this, MainActivity.class);
+    Intent intent = new Intent(GameLevels.this, Menu_btn.class);
     startActivity(intent);
     finish();
 } //системная кнопка "Назад" - конец
