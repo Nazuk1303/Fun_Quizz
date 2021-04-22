@@ -52,6 +52,16 @@ public class Menu_btn extends AppCompatActivity {
             }
         });
 
+        TextView textView1111 =(TextView)findViewById(R.id.textView1111);
+        textView1111.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu_btn.this, MenuTest.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     @Override

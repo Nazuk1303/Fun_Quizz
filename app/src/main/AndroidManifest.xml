@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FunQuizes">
-        <activity android:name=".MenuMath"></activity>
+
+        <activity android:name=".MenuTest" />
+        <activity android:name=".MenuMath" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -56,6 +58,13 @@
         </activity>
         <activity
             android:name=".MathTest"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Test1"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

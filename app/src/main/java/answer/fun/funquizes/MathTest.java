@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MathTest extends AppCompatActivity {
-
     Dialog dialog;
     Dialog dialogEnd;
     public int numLeft;
@@ -38,17 +37,18 @@ public class MathTest extends AppCompatActivity {
     String qwest;
     public int qwest1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_test);
         qwestion=findViewById(R.id.textQuestion);
-        min=5;
+        min=0;
         max=50;
         number1=(int)(Math.random()*(max-min)+min);
         number2=(int)(Math.random()*(max-min)+min);
         qwest1 = number1 + number2;
-        qwest=""+number1+"  +"+"  "+number2;
+        qwest=""+(number1)+"  +"+"  "+(number2);
         qwestion.setText(qwest);
 
 
@@ -115,6 +115,10 @@ public class MathTest extends AppCompatActivity {
         dialogEnd.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
         dialogEnd.setCancelable(false);//нельзе закрыть кнопкой "Назад"
 
+        TextView textdescription1 = (TextView)dialogEnd.findViewById(R.id.textdescriptionEnd);
+        textdescription1.setText(R.string.leveloneoneend);
+
+
         TextView btnclose2 = (TextView)dialogEnd.findViewById(R.id.btnclose);
         btnclose2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,21 +178,34 @@ public class MathTest extends AppCompatActivity {
 
         final Animation a= AnimationUtils.loadAnimation(MathTest.this, R.anim.alpha);
         //подключаем анимацию - конец
+        int index = (int) (Math.random()*2);
+        if(index==0){
+            numLeft = qwest1;
+            img_left.setImageResource(array.images111[numLeft]);
+            text_left.setText(array.texts111[numLeft]);
+            numRight = random.nextInt(102);
 
-        numLeft = random.nextInt(91);
-        img_left.setImageResource(array.images111[numLeft]);
-        text_left.setText(array.texts111[numLeft]);
+            while (numLeft==numRight){
+                numRight = random.nextInt(102);
+            }
+            img_right.setImageResource(array.images111[numRight]);
+            text_right.setText(array.texts111[numRight]);
 
-        numRight = random.nextInt(91);
+        }else{
+            numLeft = random.nextInt(102);
+            img_left.setImageResource(array.images111[numLeft]);
+            text_left.setText(array.texts111[numLeft]);
+            numRight = qwest1;
 
-        while (numLeft==numRight){
-            numRight = random.nextInt(91);
+            while (numLeft==numRight){
+                numRight = random.nextInt(102);
+            }
+            img_right.setImageResource(array.images111[numRight]);
+            text_right.setText(array.texts111[numRight]);
+
         }
 
 
-
-        img_right.setImageResource(array.images111[numRight]);
-        text_right.setText(array.texts111[numRight]);
 
         img_left.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -241,26 +258,56 @@ public class MathTest extends AppCompatActivity {
                         //Выход из уровня
                         dialogEnd.show();
                     }else {
-
-                        numLeft = random.nextInt(91);
-                        img_left.setImageResource(array.images111[numLeft]);
-                        img_left.startAnimation(a);
-                        text_left.setText(array.texts111[numLeft]);
-                        numRight = random.nextInt(91);
                         number1=(int)(Math.random()*(max-min)+min);
                         number2=(int)(Math.random()*(max-min)+min);
                         qwest1 = number1 + number2;
-                        qwest=""+number1+"  +"+"  "+number2;
+                        qwest=""+(number1)+"  +"+"  "+(number2);
                         qwest1 = number1 + number2;
                         qwestion.setText(qwest);
+                        numLeft = qwest1;
 
-                        while (numLeft==numRight){
-                            numRight = random.nextInt(91);
-                        }
+                        if(index==0){
+                            number1=(int)(Math.random()*(max-min)+min);
+                            number2=(int)(Math.random()*(max-min)+min);
+                            qwest1 = number1 + number2;
+                            qwest=""+(number1)+"  +"+"  "+(number2);
+                            qwest1 = number1 + number2;
+                            qwestion.setText(qwest);
+                            numLeft = qwest1;
+                            numLeft = qwest1;
+                            img_left.setImageResource(array.images111[numLeft]);
+                            img_left.startAnimation(a);
+                            text_left.setText(array.texts111[numLeft]);
+                            numRight = random.nextInt(102);
 
-                        img_right.setImageResource(array.images111[numRight]);
-                        img_right.startAnimation(a);
-                        text_right.setText(array.texts111[numRight]);
+                            while (numLeft==numRight){
+                                numRight = random.nextInt(102);
+                            }
+                            img_right.setImageResource(array.images111[numRight]);
+                            img_right.startAnimation(a);
+                            text_right.setText(array.texts111[numRight]);
+
+                        }else{
+                            number1=(int)(Math.random()*(max-min)+min);
+                            number2=(int)(Math.random()*(max-min)+min);
+                            qwest1 = number1 + number2;
+                            qwest=""+(number1)+"  +"+"  "+(number2);
+                            qwest1 = number1 + number2;
+                            qwestion.setText(qwest);
+                            numLeft = qwest1;
+                            numLeft = random.nextInt(102);
+                            img_left.setImageResource(array.images111[numLeft]);
+                            img_left.startAnimation(a);
+                            text_left.setText(array.texts111[numLeft]);
+                            numRight = qwest1;
+
+                            while (numLeft==numRight){
+                                numRight = random.nextInt(102);
+                            }
+                            img_right.setImageResource(array.images111[numRight]);
+                            img_right.startAnimation(a);
+                            text_right.setText(array.texts111[numRight]);}
+
                         img_right.setEnabled(true);
                     }
                 }
@@ -320,24 +367,47 @@ public class MathTest extends AppCompatActivity {
                         //Выход из уровня
                         dialogEnd.show();
                     }else {
-                        numLeft = random.nextInt(91);
-                        img_left.setImageResource(array.images111[numLeft]);
-                        img_left.startAnimation(a);
-                        text_left.setText(array.texts111[numLeft]);
-                        numRight = random.nextInt(91);
-                        number1=(int)(Math.random()*(max-min)+min);
-                        number2=(int)(Math.random()*(max-min)+min);
-                        qwest1 = number1 + number2;
-                        qwest=""+number1+"  +"+"  "+number2;
-                        qwest1 = number1 + number2;
-                        qwestion.setText(qwest);
-                        while (numLeft==numRight){
-                            numRight = random.nextInt(91);
-                        }
+                        if(index==0){
+                            number1=(int)(Math.random()*(max-min)+min);
+                            number2=(int)(Math.random()*(max-min)+min);
+                            qwest1 = number1 + number2;
+                            qwest=""+(number1)+"  +"+"  "+(number2);
+                            qwest1 = number1 + number2;
+                            qwestion.setText(qwest);
+                            numLeft = qwest1;
+                            numLeft = qwest1;
+                            img_left.setImageResource(array.images111[numLeft]);
+                            img_left.startAnimation(a);
+                            text_left.setText(array.texts111[numLeft]);
+                            numRight = random.nextInt(102);
 
-                        img_right.setImageResource(array.images111[numRight]);
-                        img_right.startAnimation(a);
-                        text_right.setText(array.texts111[numRight]);
+                            while (numLeft==numRight){
+                                numRight = random.nextInt(102);
+                            }
+                            img_right.setImageResource(array.images111[numRight]);
+                            img_right.startAnimation(a);
+                            text_right.setText(array.texts111[numRight]);
+
+                        }else{
+                            number1=(int)(Math.random()*(max-min)+min);
+                            number2=(int)(Math.random()*(max-min)+min);
+                            qwest1 = number1 + number2;
+                            qwest=""+(number1)+"  +"+"  "+(number2);
+                            qwest1 = number1 + number2;
+                            qwestion.setText(qwest);
+                            numLeft = qwest1;
+                            numLeft = random.nextInt(102);
+                            img_left.setImageResource(array.images111[numLeft]);
+                            img_left.startAnimation(a);
+                            text_left.setText(array.texts111[numLeft]);
+                            numRight = qwest1;
+
+                            while (numLeft==numRight){
+                                numRight = random.nextInt(102);
+                            }
+                            img_right.setImageResource(array.images111[numRight]);
+                            img_right.startAnimation(a);
+                            text_right.setText(array.texts111[numRight]);}
                         img_left.setEnabled(true);
                     }
                 }
