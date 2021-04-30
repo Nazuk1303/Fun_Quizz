@@ -315,10 +315,7 @@ final int[] images111 = {
 
 
 
-    final String[] questionslit2 = {
-        "Назовите имя замечательного русского поэта Майкова",};
-    final String[] questionslit3 = {
-        "Где родился главный герой романа А.С. Пушкина «Евгений Онегин»?",};
+
     final String[] questionslit4 = {
         "Название какого из этих духовных произведений переводится на русский язык как «книга»?",};
     final String[] questionslit5 = {
@@ -353,28 +350,8 @@ final int[] images111 = {
 
 
 
-    final String[] wa1_1 = {
-            "Биография Галилео Галилея"
-    };
-    final String[] wa1_2 = {
-            "Мы"
-    };
-    final String[] wa1_3 = {
-            "Четверо друзей"
-    };
 
-    final String[] ra2 = {
-            "Аполлон"
-    };
-    final String[] wa2_1 = {
-            "Артур"
-    };
-    final String[] wa2_2 = {
-            "Марк"
-    };
-    final String[] wa2_3 = {
-            "Владислав"
-    };
+
 
     final String[] ra3 = {
             "Петербург"
