@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -38,6 +40,70 @@ public class Test1 extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.previewdialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(false);
+
+        TextView textdescription = (TextView)dialog.findViewById(R.id.textdescription);
+        textdescription.setText(R.string.test1);
+
+        TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
+        btnclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Test1.this, MenuTest.class);
+                startActivity(intent);
+                finish();
+                dialog.dismiss();
+
+            }
+        });
+
+        dialogEnd = new Dialog(this);//создаём новое диалоговое окно
+        dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
+        dialogEnd.setContentView(R.layout.dialogend);//путь
+        dialogEnd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//прозрачный фон
+        dialogEnd.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        dialogEnd.setCancelable(false);//нельзе закрыть кнопкой "Назад"
+
+
+
+
+        TextView btnclose2 = (TextView)dialogEnd.findViewById(R.id.btnclose);
+        btnclose2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Test1.this, MenuTest.class);
+                startActivity(intent);
+                finish();
+                dialogEnd.dismiss();
+                //обрабатываем нажатие кнопки - конец
+            }
+        });
+        //кнопка, которая закрывает диалоговое окно - конец
+        Button btncontinue2 = (Button)dialogEnd.findViewById(R.id.btncontinue);
+        btncontinue2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Test1.this, MenuTest.class);
+                startActivity(intent);
+                finish();
+                dialogEnd.dismiss();
+            }
+        });
+
+        Button btncontinue = (Button)dialog.findViewById(R.id.btncontinue);
+        btncontinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+
 
 
         number=0;
@@ -46,10 +112,39 @@ public class Test1 extends AppCompatActivity {
         Test test2=new Test("Знаменитый писатель-фантаст Айзек Азимов написал:", "Слова в науке",  "Биография Галилео Галилея",  "Мы",  "Четверо друзей", "Братья");
         Test test3 = new Test("Назовите имя замечательного русского поэта Майкова", "Аполлон", "Артур",  "Марк", "Владислав", "Кирилл");
         Test test4 = new Test("Где родился главный герой романа А.С. Пушкина «Евгений Онегин»?", "Петербург", "Москва", "Владивосток",  "Кавказ", "Саратов");
+        Test test5 = new Test ("Название какого из этих духовных произведений переводится на русский язык как «книга»?", "Библия", "Евангелие",  "Катехизис",  "Талмуд", "Каштанка");
+        Test test6 = new Test ( "Кто из писателей-фантастов придумал три закона робототехники?",  "Айзек Азимов", "Энтони Райан",  "Андрей Круз", "Дуглас Адамс", "Евген Замятин");
+        Test test7 = new Test ("Как называется одна из знаменитых сказок Г.Х. Андерсена?", "Новое платье короля",  "Старое платье короля", "Голый король", "Долой короля!", "Грустный король");
+        Test test8 = new Test ("Повествование в романе А.С. Пушкина \"Капитанская дочка\" ведется от лица ...",  "Петра Гринёва",  "Пугачёва", "Маши Мироновой",  "Автора", "Призрака");
+        Test test9 = new Test (  "Отгадайте первоначальную крылатую фразу: «Положительные эмоции," +
+                " испытываемые в процессе пассивного перемещения, являются желательной предпосылкой эмоционального комфорта," +
+                " сопровождающего реализацию активной двигательной функции.\"", "Любишь кататься - люби и санки возить", "Одним выстрелом - двух заяцев", "Волков бояться - в лес не ходить",  "Готовь сани летом, а телегу зимой","На обиженых воду возят");
+        Test test10 = new Test ("Это \"животное\" стало символом коварства и обмана. Образ его в литературе появился в древности, а сейчас похожее выражение  мы часто слышим от  пользователей ПК.",  "Троянский конь", "Тамбовский волк", "Ивановская лиса",  "Персидский кот", "Белый медведь");
+        Test test11 = new Test ("Чем брал взятки герой комедии Н.В. Гоголя \"Ревизор\" судья Ляпкин-Тяпкин?", "Борзыми щенками",  "Деньгами",  "Едой",  "Лошадями", "Людьми");
+        Test test12 = new Test ("Кто написал повесть «Чапаев»",  "Дмитрий Фурманов", "Евген Замятин",  "Виктор Пелевин",  "Михаил Шолохов", "Михаил Лермонтов");
+        Test test13 = new Test ("Какая пословица является эпиграфом к роману А.С.Пушкина \"Капитанская дочка\"?",  "Береги честь смолоду",  "Береги платье снову, а честь смолоду", "Мир освещается солнцем, а человек знанием", "В добрый час молвить, в дурной промолчать", "Недоброе слово больнее огня жжёт");
+        Test test14 = new Test ("Какая черта характера объединяет Григория Ивановича Муромского (героя повести «Барышня-крестьянка») и императора Александра Павловича (героя сказа Н.С.Лескова «Левша»)?", "Англомания",  "Одиночество", "Щедрость", "Остроумие", "Жадность");
+        Test test15 = new Test ( "В стихотворении к близкому другу, милому и чудоковатому (в будущем декабристу), с которым у Пушкина было много и забавных столкновений, он обращается:\n" +
+                "\n" +
+                " Лицейской жизни милый брат,\n" +
+                " Делю с тобой последние мгновенья!\n" +
+                "Кого из своих друзей называет Пушкин в этом стихотворении называет братом?", "Пущину",  "Лермонтову", "Толстому", "Дельвигу", "Пугачёву");
         list.add(test1);
         list.add(test2);
         list.add(test3);
         list.add(test4);
+        list.add(test5);
+        list.add(test6);
+        list.add(test7);
+        list.add(test8);
+        list.add(test9);
+        list.add(test10);
+        list.add(test11);
+        list.add(test12);
+        list.add(test13);
+        list.add(test14);
+        list.add(test15);
+
 
 
         qwest=findViewById(R.id.textQuestion1);
@@ -91,6 +186,7 @@ public class Test1 extends AppCompatActivity {
             R.id.point15,
 
 
+
     };
 
 
@@ -121,6 +217,24 @@ public class Test1 extends AppCompatActivity {
                 }
             }
                       }
+
+        TextView textdescription1 = (TextView)dialogEnd.findViewById(R.id.textdescriptionEnd);
+        if(count<16){
+            textdescription1.setText(R.string.test1end1);
+            }
+
+        if(count<9){
+            textdescription1.setText(R.string.test1end2);
+            }
+
+        if(count<5){
+                textdescription1.setText(R.string.test1end3);
+            }
+
+        if(count==15){
+            dialogEnd.show();
+        }
+
                   }
 
 
@@ -133,12 +247,28 @@ public class Test1 extends AppCompatActivity {
         int id=view.getId();
         switch (id){
             case R.id.textView22: if(anwer.getText().toString().equals(list.get(number).rAnser)){
-
+                    if(count<15){
                     count++;
 
                 for (int y=0; y<count; y++){
                     TextView tv = findViewById(progress[y]);
-                    tv.setBackgroundResource(R.drawable.style_points_green);
+                    tv.setBackgroundResource(R.drawable.style_points_green);}
+
+                    TextView textdescription1 = (TextView)dialogEnd.findViewById(R.id.textdescriptionEnd);
+                    if(count<16){
+                            textdescription1.setText(R.string.test1end1);
+                    }
+                    if(count<9){
+                            textdescription1.setText(R.string.test1end2); }
+
+                    if(count<5){
+
+                            textdescription1.setText(R.string.test1end3);
+                        }
+
+                }
+                if(count==15){
+                    dialogEnd.show();
                 }
 
 
@@ -147,6 +277,9 @@ public class Test1 extends AppCompatActivity {
 
             } else{
                 count=count+0;
+                if(count==15){
+                    dialogEnd.show();
+                }
 
 
 
@@ -154,56 +287,123 @@ public class Test1 extends AppCompatActivity {
                 break;
             case R.id.textView23: if(w1.getText().toString().equals(list.get(number).rAnser)){
 
+                if(count<15){
                     count++;
 
+                    for (int y=0; y<count; y++){
+                        TextView tv = findViewById(progress[y]);
+                        tv.setBackgroundResource(R.drawable.style_points_green);
+                    }
+                    TextView textdescription1 = (TextView)dialogEnd.findViewById(R.id.textdescriptionEnd);
+                    if(count<16){
 
-                for (int y=0; y<count; y++){
-                    TextView tv = findViewById(progress[y]);
-                    tv.setBackgroundResource(R.drawable.style_points_green);
+                            textdescription1.setText(R.string.test1end1);
+
+                    }
+                    if(count<9){
+
+                            textdescription1.setText(R.string.test1end2);
+                        }
+
+                    if(count<5){
+
+                            textdescription1.setText(R.string.test1end3);
+                        }
+
                 }
-
+                if(count==15){
+                    dialogEnd.show();
+                }
 
 
             }else{
                 count=count+0;
 
+                if(count==15){
+                    dialogEnd.show();
+                }
 
 
             }
                 break;
             case R.id.textView24:if(w2.getText().toString().equals(list.get(number).rAnser)){
 
+                if(count<15){
                     count++;
 
-                for (int y=0; y<count; y++){
-                    TextView tv = findViewById(progress[y]);
-                    tv.setBackgroundResource(R.drawable.style_points_green);
+                    for (int y=0; y<count; y++){
+                        TextView tv = findViewById(progress[y]);
+                        tv.setBackgroundResource(R.drawable.style_points_green);
+                    }
+                    TextView textdescription1 = (TextView)dialogEnd.findViewById(R.id.textdescriptionEnd);
+                    if(count<16){
+
+                            textdescription1.setText(R.string.test1end1);
+
+                    }
+                    if(count<9){
+
+                            textdescription1.setText(R.string.test1end2);
+                        }
+
+                    if(count<5){
+
+                            textdescription1.setText(R.string.test1end3);
+
+                    }
                 }
-
-
+                if(count==15){
+                    dialogEnd.show();
+                }
 
             }else{
                 count=count+0;
 
+                if(count==15){
+                    dialogEnd.show();
+                }
 
 
             }
                 break;
             case R.id.textView25:if(w3.getText().toString().equals(list.get(number).rAnser))
             {
+                if(count<15){
                     count++;
 
+                    for (int y=0; y<count; y++){
+                        TextView tv = findViewById(progress[y]);
+                        tv.setBackgroundResource(R.drawable.style_points_green);
+                    }
+                    TextView textdescription1 = (TextView)dialogEnd.findViewById(R.id.textdescriptionEnd);
+                    if(count<16){
 
-                for (int y=0; y<count; y++){
-                    TextView tv = findViewById(progress[y]);
-                    tv.setBackgroundResource(R.drawable.style_points_green);
+                            textdescription1.setText(R.string.test1end1);
+                        }
+
+                    if(count<9){
+
+                            textdescription1.setText(R.string.test1end2);
+
+                    }
+                    if(count<5){
+
+                            textdescription1.setText(R.string.test1end3);
+
+                    }
                 }
-
+                if(count==15){
+                    dialogEnd.show();
+                }
 
 
 
             }else{
                 count=count+0;
+
+                if(count==15){
+                    dialogEnd.show();
+                }
 
 
 
@@ -215,7 +415,29 @@ public class Test1 extends AppCompatActivity {
         number++;
         show();
 
-}}
+}
+   public void dend(){
+       TextView textdescription1 = (TextView)dialogEnd.findViewById(R.id.textdescriptionEnd);
+        if(count<16){
+
+                textdescription1.setText(R.string.test1end1);
+
+        }
+        if(count<9){
+
+                textdescription1.setText(R.string.test1end2);
+
+        }
+        if(count<5){
+
+                textdescription1.setText(R.string.test1end3);
+            }
+
+
+   }
+
+
+}
 
 
 
