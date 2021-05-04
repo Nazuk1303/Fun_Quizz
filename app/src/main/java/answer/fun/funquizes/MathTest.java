@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -135,7 +136,7 @@ public class MathTest extends AppCompatActivity {
         btncontinue2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MathTest.this, Level2.class);
+                Intent intent = new Intent(MathTest.this, Demo.class);
                 startActivity(intent);
                 finish();
                 dialogEnd.dismiss();
@@ -264,16 +265,10 @@ public class MathTest extends AppCompatActivity {
                         qwest=""+(number1)+"  +"+"  "+(number2);
                         qwest1 = number1 + number2;
                         qwestion.setText(qwest);
-                        numLeft = qwest1;
+                        int index = (int) (Math.random()*2);
 
                         if(index==0){
-                            number1=(int)(Math.random()*(max-min)+min);
-                            number2=(int)(Math.random()*(max-min)+min);
-                            qwest1 = number1 + number2;
-                            qwest=""+(number1)+"  +"+"  "+(number2);
-                            qwest1 = number1 + number2;
-                            qwestion.setText(qwest);
-                            numLeft = qwest1;
+
                             numLeft = qwest1;
                             img_left.setImageResource(array.images111[numLeft]);
                             img_left.startAnimation(a);
@@ -288,13 +283,7 @@ public class MathTest extends AppCompatActivity {
                             text_right.setText(array.texts111[numRight]);
 
                         }else{
-                            number1=(int)(Math.random()*(max-min)+min);
-                            number2=(int)(Math.random()*(max-min)+min);
-                            qwest1 = number1 + number2;
-                            qwest=""+(number1)+"  +"+"  "+(number2);
-                            qwest1 = number1 + number2;
-                            qwestion.setText(qwest);
-                            numLeft = qwest1;
+
                             numLeft = random.nextInt(102);
                             img_left.setImageResource(array.images111[numLeft]);
                             img_left.startAnimation(a);
@@ -365,16 +354,28 @@ public class MathTest extends AppCompatActivity {
                     //если отпустил палец - конец
                     if (count==15){
                         //Выход из уровня
+                        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+                        final int level = save.getInt("level", 1);
+                        if (level>1){
+
+                        }else{
+                            SharedPreferences.Editor editor = save.edit();
+                            editor.putInt("Level", 2);
+                            editor.commit();
+                        }
                         dialogEnd.show();
                     }else {
+                        number1=(int)(Math.random()*(max-min)+min);
+                        number2=(int)(Math.random()*(max-min)+min);
+                        qwest1 = number1 + number2;
+                        qwest=""+(number1)+"  +"+"  "+(number2);
+                        qwest1 = number1 + number2;
+                        qwestion.setText(qwest);
+                        int index = (int) (Math.random()*2);
+
+
                         if(index==0){
-                            number1=(int)(Math.random()*(max-min)+min);
-                            number2=(int)(Math.random()*(max-min)+min);
-                            qwest1 = number1 + number2;
-                            qwest=""+(number1)+"  +"+"  "+(number2);
-                            qwest1 = number1 + number2;
-                            qwestion.setText(qwest);
-                            numLeft = qwest1;
+
                             numLeft = qwest1;
                             img_left.setImageResource(array.images111[numLeft]);
                             img_left.startAnimation(a);
@@ -389,13 +390,7 @@ public class MathTest extends AppCompatActivity {
                             text_right.setText(array.texts111[numRight]);
 
                         }else{
-                            number1=(int)(Math.random()*(max-min)+min);
-                            number2=(int)(Math.random()*(max-min)+min);
-                            qwest1 = number1 + number2;
-                            qwest=""+(number1)+"  +"+"  "+(number2);
-                            qwest1 = number1 + number2;
-                            qwestion.setText(qwest);
-                            numLeft = qwest1;
+
                             numLeft = random.nextInt(102);
                             img_left.setImageResource(array.images111[numLeft]);
                             img_left.startAnimation(a);

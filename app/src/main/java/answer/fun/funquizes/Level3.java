@@ -2,6 +2,7 @@ package answer.fun.funquizes;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -126,7 +127,7 @@ public class Level3 extends AppCompatActivity {
         btncontinue2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Level3.this, Level3.class);
+                Intent intent = new Intent(Level3.this, Demo.class);
                 startActivity(intent);
                 finish();
                 dialogEnd.dismiss();
@@ -233,6 +234,7 @@ public class Level3 extends AppCompatActivity {
                     //если отпустил палец - конец
                     if (count==15){
                         //Выход из уровня
+
                        dialogEnd.show();
                     }else {
                         numLeft = random.nextInt(9);

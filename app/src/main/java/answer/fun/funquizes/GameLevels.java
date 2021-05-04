@@ -1,6 +1,7 @@
 package answer.fun.funquizes;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +17,8 @@ public class GameLevels extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamelevels);
+
+
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -35,19 +38,24 @@ public class GameLevels extends AppCompatActivity {
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(GameLevels.this, Level1.class);
                 startActivity(intent);
-                finish();
-            }
+                finish();}
+
+
         });//кнопка для перехода на 1 уровень - конец
 
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(GameLevels.this, Level2.class);
                 startActivity(intent);
                 finish();
+
+
             }
         });//кнопка для перехода на 2 уровень - конец
 
@@ -55,11 +63,16 @@ public class GameLevels extends AppCompatActivity {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(GameLevels.this, Level3.class);
                 startActivity(intent);
                 finish();
+
+
             }
         });//кнопка для перехода на 3 уровень - конец
+
+
     }
 @Override
     public void onBackPressed(){

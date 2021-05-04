@@ -76,25 +76,25 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView29"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/button_gamelevels"
         android:gravity="center"
-        android:text="2"
+        android:text="x"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView39"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/button_gamelevels"
         android:gravity="center"
-        android:text="3"
+        android:text="x"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -106,7 +106,7 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/button_gamelevels"
         android:gravity="center"
-        android:text="4"
+        android:text="x"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
